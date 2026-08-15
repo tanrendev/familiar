@@ -1,0 +1,10 @@
+id = "tanren/familiar"
+name = "Familiar"
+version = "0.1.0"
+plugin_api = 22
+author = "tanren"
+license = "MIT"
+dependencies = []
+tags = ["widget"]
+icon = "paw"
+description = "Animated pixel companion in the bar."
