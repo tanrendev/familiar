@@ -1,0 +1,10 @@
+GIMP Palette
+Name: owl-dark
+Columns: 0
+Channels: RGBA
+#
+0 0 0 0 transparent
+20 14 6 255 outline
+125 95 56 255 body
+230 220 196 255 face
+237 180 94 255 accent
