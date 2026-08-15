@@ -1,0 +1,10 @@
+GIMP Palette
+Name: owl-light
+Columns: 0
+Channels: RGBA
+#
+0 0 0 0 transparent
+58 46 34 255 outline
+150 169 198 255 body
+246 240 226 255 face
+217 142 60 255 accent

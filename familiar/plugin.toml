@@ -8,3 +8,7 @@ dependencies = []
 tags = ["widget"]
 icon = "paw"
 description = "Animated pixel companion in the bar."
+
+[[widget]]
+id = "owl"
+entry = "owl.luau"
