@@ -37,30 +37,23 @@ local function play(name)
 end
 
 function update()
-    if #queue > 0 then
-        local f = table.remove(queue, 1)
-        show(f[1], f[2])
-        return
-    end
-    timers.blink = timers.blink - 1
-    timers.hop = timers.hop - 1
-    if timers.hop <= 0 then
-        arm("hop")
-        play("hop")
-    elseif timers.blink <= 0 then
-        arm("blink")
-        play("blink")
-        if math.random(4) == 1 then
-            queue[#queue + 1] = DOUBLE_BLINK_GAP
-            for _, f in ipairs(ANIMS.blink) do
-                queue[#queue + 1] = f
+    if #queue == 0 then
+        timers.blink = timers.blink - 1
+        timers.hop = timers.hop - 1
+        if timers.hop <= 0 then
+            arm("hop")
+            play("hop")
+        elseif timers.blink <= 0 then
+            arm("blink")
+            play("blink")
+            if math.random(4) == 1 then
+                queue[#queue + 1] = DOUBLE_BLINK_GAP
+                for _, f in ipairs(ANIMS.blink) do
+                    queue[#queue + 1] = f
+                end
             end
         end
     end
-    if #queue > 0 then
-        local f = table.remove(queue, 1)
-        show(f[1], f[2])
-        return
-    end
-    show(IDLE[1], IDLE[2])
+    local f = table.remove(queue, 1) or IDLE
+    show(f[1], f[2])
 end
