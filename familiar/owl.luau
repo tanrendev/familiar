@@ -7,7 +7,7 @@ local ANIMS = {
 local TIMING = { blink = { 12, 80 }, hop = { 80, 320 } }
 local DOUBLE_BLINK_GAP = { "open", 180 }
 
-local last = ""
+local lastFrame, lastMode = "", ""
 local queue = {}
 local timers = {}
 
@@ -23,9 +23,8 @@ arm("hop")
 local function show(frame, interval)
     noctalia.setUpdateInterval(interval)
     local mode = noctalia.isDarkMode() and "dark" or "light"
-    local key = frame .. mode
-    if key ~= last then
-        last = key
+    if frame ~= lastFrame or mode ~= lastMode then
+        lastFrame, lastMode = frame, mode
         barWidget.setImage(SPRITE:format(frame, mode), false, 32, 32)
     end
 end
