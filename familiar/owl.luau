@@ -8,6 +8,7 @@ local TIMING = { blink = { 12, 80 }, hop = { 80, 320 } }
 local DOUBLE_BLINK_GAP = { "open", 180 }
 
 local lastFrame, lastMode = "", ""
+local lastInterval = 0
 local queue = {}
 local timers = {}
 
@@ -21,7 +22,10 @@ arm("blink")
 arm("hop")
 
 local function show(frame, interval)
-    noctalia.setUpdateInterval(interval)
+    if interval ~= lastInterval then
+        lastInterval = interval
+        noctalia.setUpdateInterval(interval)
+    end
     local mode = noctalia.isDarkMode() and "dark" or "light"
     if frame ~= lastFrame or mode ~= lastMode then
         lastFrame, lastMode = frame, mode
