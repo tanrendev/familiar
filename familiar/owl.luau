@@ -12,7 +12,7 @@ local lastInterval = 0
 local queue = {}
 local timers = {}
 
-math.randomseed(os.time())
+math.randomseed(noctalia.nowMs())
 
 local function arm(name)
     timers[name] = math.random(TIMING[name][1], TIMING[name][2])
