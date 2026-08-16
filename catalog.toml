@@ -1,6 +1,7 @@
 [[plugin]]
 id = "tanren/familiar"
 name = "Familiar"
+version = "0.1.0"
 author = "tanren"
 license = "MIT"
 icon = "paw"
