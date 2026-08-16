@@ -33,3 +33,4 @@ name = "stylua"
 language = "system"
 entry = "stylua --check"
 files = '\.luau$'
+exclude = '\.d\.luau$'
