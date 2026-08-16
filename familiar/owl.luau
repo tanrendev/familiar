@@ -31,7 +31,7 @@ local function show(frame, interval)
 end
 
 local function play(name)
-    queue = { table.unpack(ANIMS[name]) }
+    queue = table.clone(ANIMS[name])
 end
 
 function update()
