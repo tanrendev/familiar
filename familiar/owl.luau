@@ -48,9 +48,7 @@ function update()
             play("blink")
             if math.random(4) == 1 then
                 queue[#queue + 1] = DOUBLE_BLINK_GAP
-                for _, f in ipairs(ANIMS.blink) do
-                    queue[#queue + 1] = f
-                end
+                table.move(ANIMS.blink, 1, #ANIMS.blink, #queue + 1, queue)
             end
         end
     end
