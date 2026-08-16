@@ -11,9 +11,7 @@ local last = ""
 local queue = {}
 local timers = {}
 
-pcall(function()
-    math.randomseed(os.time())
-end)
+math.randomseed(os.time())
 
 local function arm(name)
     timers[name] = math.random(TIMING[name][1], TIMING[name][2])
