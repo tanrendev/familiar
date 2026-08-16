@@ -26,7 +26,7 @@ local function show(frame, interval)
     local key = frame .. mode
     if key ~= last then
         last = key
-        barWidget.render(ui.image({ path = SPRITE:format(frame, mode), width = 32, height = 32 }))
+        barWidget.setImage(SPRITE:format(frame, mode), false, 32, 32)
     end
 end
 
