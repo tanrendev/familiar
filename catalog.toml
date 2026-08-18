@@ -1,7 +1,7 @@
 [[plugin]]
 id = "tanren/familiar"
 name = "Familiar"
-version = "0.1.0"
+version = "0.2.0"
 author = "tanren"
 license = "MIT"
 icon = "paw"
@@ -9,3 +9,8 @@ description = "Animated pixel companion in the bar."
 plugin_api = 22
 tags = ["bar", "fun", "animation"]
 dependencies = []
+
+[[plugin.release]]
+plugin_api = 22
+version = "0.2.0"
+rev = "c3f1a9764ea3751ce49b7100b586f7fe42a93a20"
