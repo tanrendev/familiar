@@ -1,3 +1,4 @@
+--!nonstrict
 local SPRITE = "sprites/owl-%s-%s.png"
 local IDLE = { "open", 250 }
 local ANIMS = {

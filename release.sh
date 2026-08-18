@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 set -eu
+cd "$(dirname "$0")"
 
-uvx --from commitizen cz bump --yes
+plugin=familiar
 
-version=$(sed -n 's/^version = "\(.*\)"/\1/p' familiar/plugin.toml)
+cz bump --yes
+
+version=$(sed -n 's/^version = "\(.*\)"/\1/p' "$plugin/plugin.toml")
 rev=$(git rev-parse HEAD)
-api=$(sed -n 's/^plugin_api = \([0-9]*\)/\1/p' familiar/plugin.toml)
+api=$(sed -n 's/^plugin_api = \([0-9]*\)/\1/p' "$plugin/plugin.toml")
 sed -i "0,/^version = /s/^version = .*/version = \"$version\"/" catalog.toml
 row=$(printf '[[plugin.release]]\nplugin_api = %s\nversion = "%s"\nrev = "%s"' "$api" "$version" "$rev")
 awk -v row="$row" '
