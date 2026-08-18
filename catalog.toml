@@ -7,5 +7,5 @@ license = "MIT"
 icon = "paw"
 description = "Animated pixel companion in the bar."
 plugin_api = 22
-tags = ["widget"]
+tags = ["bar", "fun", "animation"]
 dependencies = []
